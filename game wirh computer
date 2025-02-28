@@ -1,0 +1,91 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMUE1HYej53dqG/GT/uW+GA",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Farhana153/Project/blob/main/game%20wirh%20computer\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "def play_rock_paper_scissors():\n",
+        "    \"\"\"Plays a game of Rock, Paper, Scissors with the user.\"\"\"\n",
+        "\n",
+        "    options = (\"rock\", \"paper\", \"scissors\")\n",
+        "    running = True\n",
+        "\n",
+        "    while running:\n",
+        "        player = None\n",
+        "        computer = random.choice(options)\n",
+        "\n",
+        "        while player not in options:\n",
+        "            player = input(\"Enter a choice (rock, paper, scissors): \").lower()\n",
+        "\n",
+        "        print(f\"Player: {player}\")\n",
+        "        print(f\"Computer: {computer}\")\n",
+        "\n",
+        "        if player == computer:\n",
+        "            print(\"It's a tie!\")\n",
+        "        elif (player == \"rock\" and computer == \"scissors\") or \\\n",
+        "             (player == \"paper\" and computer == \"rock\") or \\\n",
+        "             (player == \"scissors\" and computer == \"paper\"):\n",
+        "            print(\"You win!\")\n",
+        "        else:\n",
+        "            print(\"You lose!\")\n",
+        "\n",
+        "        if input(\"Play again? (y/n): \").lower() != \"y\":\n",
+        "            running = False\n",
+        "\n",
+        "    print(\"Thanks for playing!\")\n",
+        "\n",
+        "# Start the game\n",
+        "play_rock_paper_scissors()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "X29bpDsfpBr9",
+        "outputId": "970ff4da-b82c-44ab-eddc-1d20869b3054"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a choice (rock, paper, scissors): rock\n",
+            "Player: rock\n",
+            "Computer: scissors\n",
+            "You win!\n",
+            "Play again? (y/n): n\n",
+            "Thanks for playing!\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
