@@ -1,0 +1,106 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMtUddtvbBhf0U1YDUOLWxF",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Farhana153/Project/blob/main/guess%20a%20number\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ArYrBZwFlN0A",
+        "outputId": "fc193b45-f8be-4525-f236-c6682e1b6f0d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Welcome to the Guess the Number Game!\n",
+            "Guess a number between 1 and 100: \n",
+            "Invalid input! Please enter a valid number.\n",
+            "Guess a number between 1 and 100: 5\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 95\n",
+            "Too high! Try again.\n",
+            "Guess a number between 1 and 100: 55\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 60\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 80\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 75\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 90\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 99\n",
+            "Too high! Try again.\n",
+            "Guess a number between 1 and 100: 95\n",
+            "Too high! Try again.\n",
+            "Guess a number between 1 and 100: 93\n",
+            "Too high! Try again.\n",
+            "Guess a number between 1 and 100: 91\n",
+            "Too low! Try again.\n",
+            "Guess a number between 1 and 100: 92\n",
+            "🎉 Congratulations! You guessed the number 92 in 12 attempts.\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "\n",
+        "def guess_the_number():\n",
+        "    print(\"Welcome to the Guess the Number Game!\")\n",
+        "    lower_bound = 1\n",
+        "    upper_bound = 100\n",
+        "    secret_number = random.randint(lower_bound, upper_bound)\n",
+        "    attempts = 0\n",
+        "\n",
+        "    while True:\n",
+        "        try:\n",
+        "            guess = int(input(f\"Guess a number between {lower_bound} and {upper_bound}: \"))\n",
+        "            attempts += 1\n",
+        "\n",
+        "            if guess < lower_bound or guess > upper_bound:\n",
+        "                print(\"Out of range! Try again.\")\n",
+        "            elif guess < secret_number:\n",
+        "                print(\"Too low! Try again.\")\n",
+        "            elif guess > secret_number:\n",
+        "                print(\"Too high! Try again.\")\n",
+        "            else:\n",
+        "                print(f\"🎉 Congratulations! You guessed the number {secret_number} in {attempts} attempts.\")\n",
+        "                break\n",
+        "        except ValueError:\n",
+        "            print(\"Invalid input! Please enter a valid number.\")\n",
+        "\n",
+        "# Run the game\n",
+        "guess_the_number()\n"
+      ]
+    }
+  ]
+}
