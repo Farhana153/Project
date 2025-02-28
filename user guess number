@@ -1,0 +1,109 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOss39z48re8dNjBtrWI4EG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Farhana153/Project/blob/main/user%20guess%20number\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O_9jLNWWnqB6",
+        "outputId": "2e305520-70a5-428d-8081-09a353b8ceb6"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Think of a number between 1 and 100, and I will try to guess it!\n",
+            "Press Enter when you are ready...c\n",
+            "My guess is: 11\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? l\n",
+            "My guess is: 71\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? l\n",
+            "My guess is: 100\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? h\n",
+            "My guess is: 82\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? l\n",
+            "My guess is: 88\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? l\n",
+            "My guess is: 92\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? h\n",
+            "My guess is: 90\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? l\n",
+            "My guess is: 91\n",
+            "Is my guess too (H)igh, too (L)ow, or (C)orrect? c\n",
+            "🎉 I guessed your number 91 in 8 attempts!\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "91"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ],
+      "source": [
+        "import random\n",
+        "\n",
+        "def computer_guesses():\n",
+        "    print(\"Think of a number between 1 and 100, and I will try to guess it!\")\n",
+        "    input(\"Press Enter when you are ready...\")\n",
+        "\n",
+        "    low, high = 1, 100\n",
+        "    attempts = 0\n",
+        "\n",
+        "    while True:\n",
+        "        guess = random.randint(low, high)\n",
+        "        attempts += 1\n",
+        "        print(f\"My guess is: {guess}\")\n",
+        "\n",
+        "        user_feedback = input(\"Is my guess too (H)igh, too (L)ow, or (C)orrect? \").strip().lower()\n",
+        "\n",
+        "        if user_feedback == \"h\":\n",
+        "            high = guess - 1\n",
+        "        elif user_feedback == \"l\":\n",
+        "            low = guess + 1\n",
+        "        elif user_feedback == \"c\":\n",
+        "            print(f\"🎉 I guessed your number {guess} in {attempts} attempts!\")\n",
+        "            break\n",
+        "        else:\n",
+        "            print(\"Invalid input! Please enter H, L, or C.\")\n",
+        "\n",
+        "# Run the game\n",
+        "computer_guesses()\n",
+        "91\n"
+      ]
+    }
+  ]
+}
