@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOkr2ZanwSDohZvHVpLAYBY",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Farhana153/Project/blob/main/countdown\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import time\n",
+        "\n",
+        "def countdown_timer(seconds):\n",
+        "    while seconds:\n",
+        "        mins, secs = divmod(seconds, 60)\n",
+        "        timer = f\"{mins:02d}:{secs:02d}\"\n",
+        "        print(timer, end=\"\\r\")  # Overwrites the previous line\n",
+        "        time.sleep(1)\n",
+        "        seconds -= 1\n",
+        "\n",
+        "    print(\"⏰ Time's up!\")\n",
+        "\n",
+        "# Get user input for countdown time\n",
+        "try:\n",
+        "    total_time = int(input(\"Enter the countdown time in seconds: \"))\n",
+        "    countdown_timer(total_time)\n",
+        "except ValueError:\n",
+        "    print(\"Please enter a valid number!\")\n",
+        "59"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K0giRWO3rYIu",
+        "outputId": "48babdba-31d7-43d3-82a2-cb8acb110ff4"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the countdown time in seconds: 50\n",
+            "⏰ Time's up!\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
